@@ -4,9 +4,9 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-age = "0.11.1"
 clap = { version = "4.5.42", features = ["derive"] }
 crossterm = "0.29.0"
 ratatui = "0.29.0"
 rpassword = "7.4.0"
+tokio = { version = "1.47.1", features = ["rt-multi-thread", "macros", "net", "io-util", "sync"] }
 zip = "4.3.0"
