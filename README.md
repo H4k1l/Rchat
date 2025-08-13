@@ -24,13 +24,13 @@ Rchat is a encrypted, private and memory safe remote chat, built in rust
 Usage: Rchat [OPTIONS] --port <PORT> --name <NAME>
 
 Options:
-  -a, --address <ADDRESS>     the address to connect to
-  -p, --port <PORT>           the port to host/connect
-      --host                  host a connection
-      --connect               connect to an host
-  -n, --name <NAME>           your name identifier
-      --protected <PASSWORD>  the password to be protected be
-  -h, --help                  Print help
+  -a, --address <ADDRESS>  the address to connect to
+  -p, --port <PORT>        the port to host/connect
+      --host               host a connection
+      --connect            connect to an host
+  -n, --name <NAME>        your name identifier
+      --protected          the password for the host
+  -h, --help               Print help
 ```
 For host a chat:
 ```
