@@ -1,9 +1,11 @@
 // importing modules
 mod connections;
 mod tui;
+mod file_management;
 
 // importing libraries
 use clap::Parser;
+use tokio;
 
 #[derive(Parser, Debug)]
 #[command(about = "Rchat is a encrypted, private and memory safe remote chat, built in rust", long_about = None)]
@@ -23,17 +25,19 @@ struct Args {
     #[clap(short = 'n', long = "name", help = "your name identifier")]
     name: String,
 
-    #[clap(long = "protected", help = "the password to be protected be")]
-    password: Option<String>
+    #[clap(long = "protected", help = "the password for the host")]
+    protected: bool
 
 }
 
-fn main() {
+#[tokio::main]
+async fn main() {
     let args = Args::parse();
+
     if args.connect && args.address.is_some() && !args.name.is_empty() && !args.port.is_empty(){
-        connections::connect(&args.port, &args.address.unwrap(), &args.name);
+        connections::connect(&args.address.unwrap(), &args.port, &args.name).await;
     }
     else if args.host && !args.name.is_empty() && !args.port.is_empty(){
-        connections::host(&args.port, &args.name);
+        connections::host(&args.port, &args.name, args.protected).await;
     }
 }
