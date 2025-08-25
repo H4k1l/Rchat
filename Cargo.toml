@@ -10,3 +10,8 @@ ratatui = "0.29.0"
 rpassword = "7.4.0"
 tokio = { version = "1.47.1", features = ["rt-multi-thread", "macros", "net", "io-util", "sync"] }
 zip = "4.3.0"
+hex = "0.4.3"
+k256 = "0.13.4"
+aes-gcm = "0.10.3"
+ecies = "0.2.9"
+rand = "0.8"
